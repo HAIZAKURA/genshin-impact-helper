@@ -8,12 +8,14 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
 
     steps:
       - name: Checkout master
         uses: actions/checkout@v2
         with:
-         ref: master
+          repository: y1ndan/genshin-impact-helper
+          ref: master
 
       - name: Set up python
         uses: actions/setup-python@v2
